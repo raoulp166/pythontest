@@ -1,6 +1,16 @@
 from datetime import date, timedelta
+import json
 
 class Sporter:
+    @staticmethod
+    def get_sporter_types():
+        return ("fit", "lazy", "doorbyters")
+
+    def toJSON(self):
+        json_string = json.dumps(self.__dict__, indent=4)
+        return json_string
+
+
     # constructor
     def __init__(self, name, member_number):
         self.name = name
